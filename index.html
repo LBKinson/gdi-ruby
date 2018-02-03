@@ -1160,11 +1160,28 @@ arr.reverse       # returns new array with same elements, reversed
 arr.shuffle       # returns new array with same elements, shuffled
 arr.uniq          # returns a new array with only unique elements
 arr.size          # returns the number of elements in the array
-arr.empty?        # returns a boolean
           </code></pre>
 					<span class="green" style="font-size: 1.5rem;">hint: don't forget about <a href="#">.methods</a> as a way <br>to see what's available to a given data type</span>
           <p>Learn more about arrays <a href="http://www.ruby-doc.org/core-2.1.0/Array.html" alt="ruby documentation - array class">here</a>.</p>
         </section>
+
+				<section>
+					<h3>? and !</h3>
+					<p>Some methods can be accessed with a `?` and `!`. You'll see this when you list <a href="#">.methods</a> on a value.</p>
+					<ul>
+						<li>The question mark returns a boolean.</li>
+						<li>The exclamation point changes the value you passed to the method.</li>
+					</ul>
+						<pre><code>
+arr = [1, 2, 3]
+arr.empty?        # returns a boolean
+arr.shuffle       # returns the array shuffled, but leaves the
+                  # variable (arr) assigned as it initially was
+arr.shuffle!      # returns the array shuffled and also
+                  # reassigns the variable (arr)
+
+						</code></pre>
+				</section>
 
 <!-- minutes-->
         <section>
