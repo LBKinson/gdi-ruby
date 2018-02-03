@@ -229,16 +229,7 @@ ls
         <section>
           <h3>Break</h3>
           <p><strong>Practice:</strong> try navigating and creating/removing documents and directories with the command line.</p>
-          <p><strong>Prep:</strong> Work through Code Academy's <a href="http://www.codecademy.com/courses/ruby-beginner-en-d1Ylq/0/1?curriculum_id=5059f8619189a5000201fbcb" alt="Code Academy">"Intro to Ruby"</a>. If you don't have previous programming experience, read Chapters 1 and 2 in <a href="https://pine.fm/LearnToProgram/?Chapter=01" alt="Learn to Program">Learn to Program</a></p>
-        </section>
-
-        <section>
-          <h3>Resources</h3>
-          <p>Learning is more fun with people! </p>
-          <ul>
-            <li>Start a study group with some classmates</li>
-            <!-- include some local/community resources here -->
-          </ul>
+          <p><strong>Prep:</strong> Work through Code Academy's <a href="http://www.codecademy.com/courses/ruby-beginner-en-d1Ylq/0/1?curriculum_id=5059f8619189a5000201fbcb" target="_blank" alt="Code Academy">"Intro to Ruby"</a>. If you don't have previous programming experience, read Chapters 0 through 2 in <a href="https://pine.fm/LearnToProgram/chap_00.html" target="_blank" alt="Learn to Program">Learn to Program</a></p>
         </section>
 
 				<!-- class #1 -->
@@ -386,13 +377,14 @@ _my_age = 50
           </ul>
           <pre><code contenteditable class="ruby fragment">
 # create and assign in one line
-age = 0
+age = 20
 
 # access the value in age
-age
+irb> age
 
 # replace value in age
 age = 40
+irb> age
           </code></pre>
         </section>
         <section>
@@ -446,6 +438,8 @@ irb> 1.0022.class
 => Float
 irb> [1,2,3].class
 => Array
+irb> <.class
+=> SyntaxError
           </code></pre>
         </section>
         <section>
@@ -461,9 +455,8 @@ c.reverse
           <pre><code contenteditable class="ruby fragment">
 a = "Spam "
 b = a * 4
-# Here multiplying a "Spam " by 4 concatenates (links) four strings
+# Here multiplying a "Spam " by 4 concatenates (links) four strings together
 =>"Spam Spam Spam Spam "
-together
           </code></pre>
         </section>
         <section>
@@ -481,6 +474,10 @@ together
           <p>How many characters long is your name?</p>
           <p>Can you repeat the word hello 100 times?</p>
           <p>What is the 5th character of my name?</p>
+
+					<p class="green">
+						hint: try typing `"string".methods`
+					</p>
         </section>
         <section>
           <h3>Numbers</h3>
@@ -492,6 +489,9 @@ irb> 1_000_000_000_000_000_000.class
 irb> 1_000_000_000_000_000_000_000.class
  => Bignum
           </code></pre>
+					<p class="green" style="font-size: 1.5rem;">
+						fyi: underscores are ignored in numbers
+					</p>
           <p>Floats are numbers with at least one number to the left of a decimal point.</p>
           <pre><code contenteditable class="ruby fragment">
             irb> 1.001.class
@@ -516,14 +516,21 @@ irb> 1_000_000_000_000_000_000_000.class
         </section>
         <section>
           <h3>Symbols</h3>
-          <p class="fragment">You can think of symbols as lightweight Strings.</p>
-          <p class="fragment">It's good to know these exist, but don't think about them too much for now.</p>
+          <p class="fragment">You can think of Symbols as lightweight Strings.</p>
+          <p class="fragment">A Symbol is the most basic Ruby object you can create. It's just a name and an internal ID. Symbols are useful because a given symbol name refers to the same object throughout a Ruby program.</p>
           <pre><code contenteditable class="ruby fragment">
 # transient and mutable
 "hello"
 
 # permanent and immutable
 :hello
+
+# watch the returned value
+irb> "string".object_id
+irb> "string".object_id
+irb> :string.object_id
+irb> :string.object_id
+
           </code></pre>
         </section>
         <section>
@@ -531,6 +538,10 @@ irb> 1_000_000_000_000_000_000_000.class
           <p class="fragment">This is another Object that we will learn about later.</p>
           <p class="fragment">For now, when you hear Boolean, think TRUE and FALSE.</p>
           <pre><code contenteditable class="ruby fragment">
+# true
+true
+=> true
+
 # NOT true
 !true
 => false
@@ -542,7 +553,7 @@ irb> 1_000_000_000_000_000_000_000.class
         </section>
         <section>
           <h3>Arrays, Ranges & Hashes</h3>
-          <p>We will also leave these data types for the next class</p>
+          <p>We will also leave these data types for the next section</p>
           <p class="fragment">Examples of what they will look like:</p>
           <pre><code contenteditable class="ruby fragment">
 # Arrays are used to hold sets of data.
@@ -582,6 +593,19 @@ irb> 2.to_s
 => "2"
 irb> "2" / 5
 NoMethodError: undefined method `/' for "2":String
+            </code>
+          </pre>
+        </section>
+				<section>
+          <h3>Methods</h3>
+          <p>
+						Try using different data types to check which methods you have available
+					</p>
+          <pre>
+            <code contenteditable class="ruby fragment">
+irb> 1.methods
+irb> "string".methods
+irb> false.methods
             </code>
           </pre>
         </section>
@@ -632,7 +656,7 @@ puts 'Pleased to meet you, ' + name + '. :)'
             <li>Update your code to return a message in all capital letters, reversed with a count of the characters returned in parens.</li>
           </ul>
           <pre><code class="ruby">
-# YOU ARE 5 YEARS OLD IN DOG YEARS (32 characters)
+# SRAEY GOD NI DLO SRAEY 5 ERA UOY (32 characters)
           </code></pre>
         </section>
         <section>
@@ -640,9 +664,9 @@ puts 'Pleased to meet you, ' + name + '. :)'
         </section>
 
         <section>
-          <h3>Homework</h3>
+          <h3>Break</h3>
           <p><strong>Practice:</strong> Write a command line program that asks the user for their birthday (be sure to specify format), then calculates their age in years, days, and seconds. Tell the user how old they are in these different formats. (Note: you'll be using 'gets' and 'puts' in this program, along with some math!)</p>
-          <p><strong>Prep:</strong> Read <a href="https://pine.fm/LearnToProgram/?Chapter=06" alt="Chp 6 of Learn to Program">Chapter 6</a> and <a href="https://pine.fm/LearnToProgram/?Chapter=07" alt="Chp 7 of Learn to Program">Chapter 7</a> of Learn To Program- don't try to do the exercises at the end yet, though.</p>
+          <p><strong>Prep:</strong> Read <a href="https://pine.fm/LearnToProgram/?Chapter=06" alt="Chp 6 of Learn to Program">Chapter 6</a> and <a href="https://pine.fm/LearnToProgram/?Chapter=07" alt="Chp 7 of Learn to Program">Chapter 7</a> of Learn To Program.</p>
         </section>
 
 				<!-- class #2 -->
@@ -791,11 +815,11 @@ user_guess = gets.chomp.to_i
 secret_number = 312
 
 if user_guess < secret_number
-puts "Too low!"
+	puts "Too low!"
 elsif user_guess > secret_number
-puts "Too high!"
+	puts "Too high!"
 else
-puts "You guessed it. Wow maybe you're psychic...."
+	puts "You guessed it. Wow maybe you're psychic...."
 end
           </code></pre>
           <p>Can you tell what this code does?</p>
@@ -807,7 +831,7 @@ end
           <p>We achieve this using <strong>if</strong> statements and boolean expressions.</p>
           <pre><code  class="fragment ruby">
 if x == 5
-puts 'x is equal to 5'
+	puts 'x is equal to 5'
 end
           </code></pre>
           </section>
@@ -816,9 +840,9 @@ end
           <p>We often want a different block to execute if the statement is false. This can be accomplished using <strong>else</strong>.</p>
           <pre><code  class="fragment ruby">
 if x == 5
-puts 'x is equal to 5'
+	puts 'x is equal to 5'
 else
-puts 'x is not equal to 5'
+	puts 'x is not equal to 5'
 end
           </code></pre>
         </section>
@@ -829,17 +853,17 @@ end
           <pre><code  class="ruby">
 # And
 if x > 3 && y > 3
-puts 'Both values are greater than 3'
+	puts 'Both values are greater than 3'
 end
 
 # Or
 if x != 0 || y != 0
-puts 'The point x,y is not on the x or y axis'
+	puts 'The point x,y is not on the x or y axis'
 end
 
 # Not
 if not(x > y)
-puts 'x is less than y'
+	puts 'x is less than y'
 end
           </code></pre>
         </section>
@@ -852,11 +876,11 @@ end
           <p>For example:</p>
           <pre><code  class="fragment ruby">
 if x > 10
-puts "x is greater than 10"
+	puts "x is greater than 10"
 elsif x <= 10 && x > 0
-puts "x is a number between 1 and 10"
+	puts "x is a number between 1 and 10"
 else
-puts "Wow, don't be so negative, dude"
+	puts "Wow, don't be so negative, dude"
 end
           </code></pre>
         </section>
@@ -888,11 +912,11 @@ puts "2 - Climb a tree"
 input = gets.chomp
 
 if input == '1'
-puts "You hide in a cave. The dragon finds you and asks if you'd like to play Scrabble. Maybe it's not so vicious after all!"
+	puts "You hide in a cave. The dragon finds you and asks if you'd like to play Scrabble. Maybe it's not so vicious after all!"
 elsif input == '2'
-puts "You climb a tree. The dragon can't find you."
+	puts "You climb a tree. The dragon can't find you."
 else
-puts "That's not a valid option."
+	puts "That's not a valid option."
 end
           </code></pre>
           <pre><code class="ruby">
@@ -912,8 +936,8 @@ ruby dragon.rb
 x = 10
 
 while x > 0
-puts "Loop number #{x}"
-x = x - 1
+	puts "Loop number #{x}"
+	x = x - 1
 end
 
 puts 'Done'
@@ -922,12 +946,14 @@ puts 'Done'
         <section>
           <h3>While Loops</h3>
           <pre><code  class="ruby">
-x = 10
+x = 100
 
-while x > 0
-puts "Loop number #{x}"
-x = x - 1
+while x > 90
+	puts "Loop number #{x}"
+	x = x - 1
 end
+
+# x = 90
           </code></pre>
           <p>The while statement takes a condition, and as long as it evaluates to true, the code block beneath it is repeated. This creates a <strong>loop</strong>.</p>
           <p> Without the `x = x - 1` statement, to increment the value of x, this would be an <strong>infinite loop</strong> :( :( :(</p>
@@ -940,11 +966,11 @@ end
 num_bottles = 99
 
 while num_bottles > 0
-puts "#{num_bottles} bottles of beer on the wall,
-#{num_bottles} bottles of beer, take one down, pass it
-around, #{num_bottles - 1} bottles of beer on the wall!"
+	puts "#{num_bottles} bottles of beer on the wall,
+	#{num_bottles} bottles of beer, take one down, pass it
+	around, #{num_bottles - 1} bottles of beer on the wall!"
 
-num_bottles = num_bottles - 1
+	num_bottles = num_bottles - 1
 end
           </code></pre>
           <p>"#{num_bottles}" is an example of <strong>string interpolation</strong></p>
@@ -967,12 +993,12 @@ end
 loopy = true
 
 while loopy == true
-puts "Are we having fun yet?"
-puts "Answer 'true' or 'false'."
-user_input = gets.chomp
-if user_input == 'false'
-loopy = false
-end
+	puts "Are we having fun yet?"
+	puts "Answer 'true' or 'false'."
+	user_input = gets.chomp
+	if user_input == 'false'
+		loopy = false
+	end
 end
           </code></pre>
           <p>Learn more about loops in Ruby <a href="http://www.tutorialspoint.com/ruby/ruby_loops.htm" alt="Loops tutorial">here</a>.</p>
@@ -985,7 +1011,7 @@ end
             <p>First, we need a collection. We use a <strong>range</strong> of numbers to loop over.</p>
             <pre><code  class="fragment ruby">
 (0..5).each do |i|
-puts "Value of i is #{i}"
+	puts "Value of i is #{i}"
 end
             </code></pre>
 
@@ -995,7 +1021,7 @@ end
             <h3>Each loops</h3>
             <pre><code  class="ruby">
 (0..5).each do |i|
-puts "Value of i is #{i}"
+	puts "Value of i is #{i}"
 end
             </code></pre>
             <p>The loop has three parts:</p>
@@ -1057,6 +1083,7 @@ end
 
 (22..28).to_a
           </code></pre>
+					<span class="green" style="font-size: 1.5rem;">hint: don't forget about <a href="#">.methods</a> as a way <br>to see what's available to a given data type</span>
           <p>Learn more about ranges <a href="http://www.ruby-doc.org/core-2.1.1/Range.html" alt="Ruby Doc">here</a>.</p>
         </section>
 
@@ -1127,6 +1154,7 @@ arr.uniq          # returns a new array with only unique elements
 arr.size          # returns the number of elements in the array
 arr.empty?        # returns a boolean
           </code></pre>
+					<span class="green" style="font-size: 1.5rem;">hint: don't forget about <a href="#">.methods</a> as a way <br>to see what's available to a given data type</span>
           <p>Learn more about arrays <a href="http://www.ruby-doc.org/core-2.1.0/Array.html" alt="ruby documentation - array class">here</a>.</p>
         </section>
 
@@ -1191,6 +1219,7 @@ chapters.to_a       # converts hash to an array of arrays
 chapters.invert     # returns new hash with old one's values
                   # as keys and keys as values
             </code></pre>
+						<span class="green" style="font-size: 1.5rem;">hint: don't forget about <a href="#">.methods</a> as a way <br>to see what's available to a given data type</span>
             <p>Learn more about hashes <a href="http://www.ruby-doc.org/core-2.1.1/Hash.html" alt="Ruby Docs">here</a>.</p>
         </section>
 
@@ -1206,7 +1235,7 @@ chapters.invert     # returns new hash with old one's values
           <p>This is the simplest!</p>
           <pre><code class="ruby">
 (3..8).each do |n|
-puts n * 4
+	puts n * 4
 end
           </code></pre>
         </section>
@@ -1218,14 +1247,14 @@ end
 pets_array = ["dog", "cat", "turtle", "parakeet", "ferret"]
 
 pets_array.each do |p|
-puts "I like #{p}s!!"
+	puts "I like #{p}s!!"
 end
 
 
 deep_array = [["mountain", "desert"], ["ocean", "sky"]]
 
 deep_array.each do |p|
-puts "I like #{p.first}s!!"  # each element is also an array
+	puts "I like #{p.first}s!!"  # each element is also an array
 end
           </code></pre>
         </section>
@@ -1237,7 +1266,7 @@ end
 grades_hash = { "Jane Doe" => 10, "Jim Doe" => 6, "Jan Doe" => 8}
 
 grades_hash.each do |key, value|
-puts "#{key}'s grade is #{value}"
+	puts "#{key}'s grade is #{value}"
 end
           </code></pre>
         </section>
@@ -1248,7 +1277,7 @@ end
 
           <p>Write a program that prints out every number between 1 and 1000 that is divisible by 7.</p>
           <br />
-          <p>Hint: the modulo operator, %, will be helpful.</p>
+          <p class="green">Hint: the modulo operator, %, will be helpful.</p>
         </section>
 
         <section>
