@@ -1188,15 +1188,15 @@ arr.shuffle!      # returns the array shuffled and also
           <h3>Hashes</h3>
           <p>Hashes have curly braces and hash rockets and can be filled with any data type: integers, floats, strings, even arrays and hashes. </p>
           <pre><code  class="fragment ruby">
-grades_hash = { "Jane Doe" => 10, "Jim Doe" => 6, "Jan Doe" => 8}
-new_hash = { 1 => "a", "d" => 12, "f" => 35 }
+beers_hash = { "IPA" => "Wolfpup", "Lager" => "Coors", "Hefeweizen" => "Blue Moon"}
+snacks_hash = { "crackers" => "Wheat Thins", "veggies" => "carrot sticks", "dip" => "hummus" }
 
 # methods to find information about hashes
 new_hash.length
-grades_hash.count
-grades_hash.size
-grades_hash.has_key?("Jan Doe")
-new_hash.has_value?(35)
+beers_hash.count
+beers_hash.size
+beers_hash.has_key?("Lager")
+new_hash.has_value?("Wheat Thins")
 
           </code></pre>
           <p>Syntax:</p>
@@ -1208,11 +1208,11 @@ new_hash.has_value?(35)
           <p>Hashes are <strong>unordered.</strong> Hashes are like dictionaries, with unique <strong>key / value</strong> pairs.</p>
           <p>Because hashes can have any type of object as an idex, and are unordered, we must access values by their <strong>key</strong>.</p>
           <pre><code  class="fragment ruby">
-grades_hash = { "Jane Doe" => 10, "Jim Doe" => 6, "Jan Doe" => 8}
-new_hash = { 1 => "a", "d" => 12, "f" => 35 }
+beers_hash = { "IPA" => "Wolfpup", "Lager" => "Coors", "Hefeweizen" => "Blue Moon"}
+snacks_hash = { "crackers" => "Wheat Thins", "veggies" => "carrot sticks", "dip" => "hummus" }
 
-grades_hash["Jane Doe"]   # returns 10, the value of this key
-new_hash["d"]             # returns 12, the value of this key
+beers_hash["IPA"]         # returns "Wolfpup", the value of this key
+new_hash["crackers"]      # returns "Wheat Thins", the value of this key
 grades_hash.first         # returns first key/value pair... probably
           </code></pre>
         </section>
@@ -1220,14 +1220,14 @@ grades_hash.first         # returns first key/value pair... probably
         <section>
           <h3>Adding & Removing from Hashes</h3>
           <pre><code  class="ruby">
-new_hash = { 1 => "a", "d" => 12, "f" => 35 }
+snacks_hash = { "crackers" => "Wheat Thins", "veggies" => "carrot sticks", "dip" => "hummus" }
 
 # add
-new_hash["z"] = 43   # adds a new key/value pair "z" => 43
+snacks_hash["candy"] = "Swedish Fish"   # adds a new key/value pair "candy" => "Swedish Fish"
 
 #remove
-new_hash.delete("d") # removes key/value pair with specified key
-new_hash.clear       # removes all key/value pairs
+snacks_hash.delete("veggies") # removes key/value pair with specified key
+snacks_hash.clear             # removes all key/value pairs
           </code></pre>
         </section>
 
@@ -1252,12 +1252,12 @@ chapters.invert     # returns new hash with old one's values
           <h3>Enumerable</h3>
           <p><strong>Arrays</strong> and <strong>Hashes</strong> are both members of the <strong>Enumerable</strong> class. There are a lot of cool methods available for Enumerable, including <strong>each</strong>. </p>
 
-        <!-- <p>Learn more about the methods available to Enumerable <a href="http://www.ruby-doc.org/core-2.1.1/Enumerable.html" alt="Ruby Docs">here</a>.</p> -->
+        <p>Learn more about the methods available to Enumerable <a href="http://www.ruby-doc.org/core-2.1.1/Enumerable.html" alt="Ruby Docs">here</a>.</p>
         </section>
 
         <section>
           <h3>.each with Ranges</h3>
-          <p>This is the simplest!</p>
+          <p>This is a way to make sure you're keeping count</p>
           <pre><code class="ruby">
 (3..8).each do |n|
 	puts n * 4
@@ -1288,7 +1288,7 @@ end
           <h3>.each with Hashes</h3>
           <p>Each element has a key and value that needs to be dealt with.</p>
           <pre><code class="ruby">
-grades_hash = { "Jane Doe" => 10, "Jim Doe" => 6, "Jan Doe" => 8}
+grades_hash = { "Jane Doe" => "A+", "Jim Doe" => "B-", "Alex Doe" => "F"}
 
 grades_hash.each do |key, value|
 	puts "#{key}'s grade is #{value}"
