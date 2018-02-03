@@ -73,10 +73,34 @@
           <ul>
             <li>Who are you?</li>
             <li>What do you hope to get out of this class?</li>
-            <li>What is your favorite ice cream or frozen dessert?</li>
+            <li>What is your favorite animal?</li>
+						<li>What do you hope to get out of the class?</li>
           </ul>
+					<div style="display: flex; height: 350px; justify-content: space-around; padding-top: 25px;">
+						<img style="height: 100%;"src="https://scontent-lax3-2.cdninstagram.com/t51.2885-15/e35/21910845_306840583124640_4922809403490435072_n.jpg" />
+						<img style="height: 100%;"src="https://scontent-lax3-2.cdninstagram.com/t51.2885-15/e35/21910051_489439294750944_7776397267069566976_n.jpg" />
+				</div>
           </div>
         </section>
+				<section>
+				<h3>Thanks, Fender</h3>
+				<div class="fragment">
+					We are a <span class="green">guitar</span> company...
+				</div>
+				<div class="fragment">
+					...but also a <span class="green">technology</span> company.
+					<div style="display: flex; width: 150%; margin-left: -25%; justify-content: space-around;">
+						<img style="max-height: 450px;" src="https://lbkinson.github.io/gdi-featured-git-github/images/lbk/fenderPlay1.png" />
+						<img style="max-height: 450px;" src="https://lbkinson.github.io/gdi-featured-git-github/images/lbk/fenderPlay2.png" />
+						<img style="max-height: 450px;" src="http://is2.mzstatic.com/image/thumb/Purple60/v4/e6/52/46/e652462b-1169-f875-d362-decd4e6d70a4/source/392x696bb.jpg" />
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h3>We're hiring!</h3>
+				<div><img src="https://lbkinson.github.io/gdi-featured-git-github/images/lbk/fenderHiring.png" /></div>
+			</section>
 
         <section>
 					<h5>Section 0</h5>
@@ -91,14 +115,14 @@
         <!-- Part 1: Installfest, 60 minutes -->
         <section>
           <h3>A little help from our friends...</h3>
-          <p>We'll be using Railsbridge's Installfest instructions to get set up. <a href="http://railsbridge.org/" alt="railsbridge home">Railsbridge</a> is an awesome organization that we're friends with and you should be, too! </p>
+          <p>We'll be using <a href="http://railsbridge.org/" alt="railsbridge home">Railsbridge's Installfest</a> instructions to get set up.</p>
         </section>
 
         <section>
           <h3>Installfest</h3>
           <p><a href="http://docs.railsbridge.org/installfest/" alt="railsbridge installfest">Here it is!</a></p>
           <p class="green">http://docs.railsbridge.org/installfest/</p>
-          <p>Just work through the instructions for your operating system. <strong>Stop after the "Configure Git" step.</strong> Ask a volunteer for help if you get stuck or lost. This process should take about an hour.</p>
+          <p>Work through the instructions for your operating system. <strong>Stop after the "Step 7: Install Ruby" step.</strong> Let us know if you need help!</p>
         </section>
 
         <!-- Part 2: Intro to Terminal, 20 minutes -->
@@ -219,7 +243,7 @@ ls
         <!-- Let's Develop It - 10 min -->
         <section>
           <h3>Let's Develop It!</h3>
-          <p>Working in the terminal, create a directory called <a href="#">gdi_ruby</a> in the location of your choosing (Desktop? Documents? Somewhere you'll be able to find it again!). Inside the gdi_ruby directory, create a file called <a href="#">class0.txt</a>.</p>
+          <p>In terminal, create a directory called <a href="#">gdi_ruby</a> in the location of your choosing.</p>
         </section>
 
         <section>
@@ -246,12 +270,10 @@ ls
         <section>
           <h3>What is programming?</h3>
           <ul>
-            <li class="fragment">Teaching the computer to do a task.</li>
-            <li class="fragment">A program is made of one or more files of code, each of which solve part of the overall task.
-            </li>
-            <li class="fragment">Programming code is human readable but also needs a form that the computer can run directly.
-              This form is not human readable.
-            </li>
+            <li class="fragment">Teaching the computer to do a task</li>
+            <li class="fragment">A program is made of one or more files of code</li>
+						<li class="fragment">Each file solves part of the overall task</li>
+            <li class="fragment">Programming code is human readable but its syntax is designed to be understandable by computers</li>
           </ul>
         </section>
         <section>
@@ -269,8 +291,6 @@ for(int i = 0; i < 5; i++)
             </pre>
             <li class="fragment">The community is large, active and interested in helping others learn.</li>
             <li class="fragment">You can get a web app off the ground quickly.</li>
-            <li class="fragment">You can make a lucrative career out of it.</li>
-            <li class="fragment">Using Ruby will cost you $0.</li>
           </ul>
         </section>
         <section>
@@ -299,13 +319,12 @@ for(int i = 0; i < 5; i++)
         <section>
           <h3>Working with IRB</h3>
           <ul>
-            <li class="fragment">IRB is a command line interface to ruby that is installed when we install Ruby. It works like a calculator and is a
-              great way to get started quickly.
+            <li class="fragment">IRB is a command line interface to Ruby. It works sort of like a calculator and is a great way to get started quickly.
             </li>
-            <li class="fragment">Open: type `irb`</li>
-            <li class="fragment">Quit: Type `quit` and then press `enter`</li>
+            <li class="fragment">Open: type `irb` and then press `enter`</li>
+            <li class="fragment">Quit: Type `quit` or `exit` and then press `enter`</li>
             <li class="fragment">Follow along with the examples in the slides. Type them in!</li>
-            <li class="fragment">Feel free to explore as well. You will not accidentally break things.</li>
+            <li class="fragment">Feel free to explore as well. You will not accidentally break anything.</li>
           </ul>
         </section>
         <section>
@@ -325,11 +344,9 @@ for(int i = 0; i < 5; i++)
         <section>
           <h3>Errors are Neat!</h3>
           <ul>
-            <li class="fragment">There are different kinds of errors that can occur. We just saw the <strong>SyntaxError</strong> which often
-              helps us find misspelled words or missing quotes.
+            <li class="fragment">Many different kinds of errors can occur. We just saw the <strong>SyntaxError</strong> which often helps us find misspelled words or missing quotes.
             </li>
-            <li class="fragment">Take time to read each Error. They often tell you how to fix the issue and can be a great
-              starting point when searching for help online.
+            <li class="fragment">Take time to read each error. They can help tell you how to fix the issue and can be a great starting point when searching for help online.
             </li>
           </ul>
           <pre>
@@ -354,18 +371,9 @@ age = 50
 days_in_year = 365
 days_alive = age * days_in_year
 => 18250
-          </code></pre>
-        </section>
-        <section>
-          <h3>Ruby's Variables</h3>
-          <ul>
-            <li class="fragment">Ruby has three kinds of variables, one kind of constant and exactly two pseudo-variables.</li>
-            <li class="fragment">A local variable starts with a lower case letter or an underscore character (_) and consists entirely of letters, numbers and underscores.</li>
-          </ul>
-          <pre><code contenteditable class="ruby fragment">
-age = 50
-_age = 50
-_my_age = 50
+age = 45
+days_alive = age * days_in_year
+=> 16425
           </code></pre>
         </section>
         <section>
