@@ -1249,7 +1249,7 @@ chapters.invert     # returns new hash with old one's values
 
         <section>
           <h3>Enumerable</h3>
-          <p><strong>Arrays</strong> and <strong>Hashes</strong> are both members of the <strong>Enumerable</strong> class. There are a lot of cool methods available for Enumerable, including <strong>each</strong>. </p>
+          <p><strong>Arrays</strong> and <strong>Hashes</strong> are both members of the <strong>Enumerable</strong> class. There are a lot of cool methods available for Enumerable, including <strong>each</strong>, that provide collection classes with several traversal and searching functions, and with the ability to sort. </p>
 
         <p>Learn more about the methods available to Enumerable <a href="http://www.ruby-doc.org/core-2.1.1/Enumerable.html" alt="Ruby Docs">here</a>.</p>
         </section>
@@ -1304,12 +1304,7 @@ end
           <p class="green">Hint: the modulo operator, %, will be helpful.</p>
         </section>
 
-        <section>
-          <h3>Enumerable</h3>
-          <p>Visit <a href="https://gist.github.com/cherimarie/11004115" alt="Gist with pets array">this page</a> and copy the contents of the Gist to a local file. Save it as pets.rb. We'll work with it together in IRB.</p>
-        </section>
-
-        <section>
+				<section>
           <h3>Enumerable: Reduce</h3>
           <p>Returns the product of running the operator on all elements of the enumerable.</p>
           <pre><code class="ruby">
@@ -1320,11 +1315,17 @@ end
         </section>
 
         <section>
+          <h3>Enumerable</h3>
+          <p>Visit <a href="https://gist.github.com/LBKinson/0537368819a10c03d6b8a78c65dd0249" target="_blank" alt="Gist with pets array">this page</a> and copy the contents of the Gist to IRB. We'll work with it together to learn about Enumerable methods.</p>
+        </section>
+
+        <section>
           <h3>Enumerable: Collect and Map</h3>
           <p>Returns an array with the results of running the block on each element. Can be used interchangably.</p>
           <pre><code class="ruby">
-$pets.collect{|p| p[:name]}      # returns array of all pet names
-$pets.collect{|p| p[:legs]}.reduce(:+) # returns sum of all pet legs
+pets.collect{ |p| p[:name] }      # returns array of all pet names
+pets.collect{ |p| p[:legs] }.reduce(:+) # returns sum of all pet legs
+(1..4).map { |i| i*i }          # returns [1, 4, 9, 16]
           </code></pre>
         </section>
 
@@ -1332,7 +1333,7 @@ $pets.collect{|p| p[:legs]}.reduce(:+) # returns sum of all pet legs
           <h3>Enumerable: Reject</h3>
           <p>Returns an array with all elements that did not meet the critera in code block.</p>
           <pre><code class="ruby">
-$pets.reject{|p| p[:talents].include? "napping" }
+pets.reject{ |p| p[:talents].include? "napping" }
   # returns array of pets whose talents do not include napping
           </code></pre>
         </section>
@@ -1346,11 +1347,11 @@ $pets.reject{|p| p[:talents].include? "napping" }
             <h3>Let's Develop It- Sample Code</h3>
             <p>How many of our pets are nocturnal?</p>
             <pre><code class="ruby">
-$pets.reject{|p| p[:nocturnal]== false}.count
+pets.reject{ |p| p[:nocturnal] == false }.count
             </code></pre>
           </section>
 
-<!--
+
         <section>
             <h3>Nil</h3>
             <p class="fragment">Nil is an <strong>object</strong>! Try the following in IRB:</p>
@@ -1365,16 +1366,16 @@ nil.size
 
 
             <p>Learn more about the nil class <a href="http://www.ruby-doc.org/core-2.1.0/NilClass.html" alt="ruby documentation - nil class">here</a>.</p>
-        </section> -->
+        </section>
 
         <section>
           <h3>Questions?</h3>
         </section>
 
         <section>
-          <h3>Homework</h3>
-          <p><strong>Practice:</strong> Find two interesting methods for Enumerable (via <a href="http://www.ruby-doc.org/core-2.1.1/Enumerable.html" alt="Ruby Docs">Ruby Docs</a>) and write a little program that uses them for arrays or hashes. Do any one the exercises at the end of <a href="http://pine.fm/LearnToProgram/?Chapter=06" alt="Chp 6 of Learn to Program">Chapter 6</a> of Learn to Program.</p>
-          <p><strong>Prep:</strong> Read <a href="http://pine.fm/LearnToProgram/?Chapter=08" alt="Chp 8 of Learn to Program">Chapter 8</a> of Learn To Program- don't try to do the exercises at the end yet, though.</p>
+          <h3>Break</h3>
+          <p><strong>Practice:</strong> Find two interesting methods for Enumerable (via <a href="http://www.ruby-doc.org/core-2.1.1/Enumerable.html" alt="Ruby Docs">Ruby Docs</a>) and write a little program that uses them for arrays or hashes.</p>
+          <p><strong>Prep:</strong> Read <a href="http://pine.fm/LearnToProgram/?Chapter=08" alt="Chp 8 of Learn to Program">Chapter 8</a> of Learn To Program.</p>
         </section>
 
 				<!-- class #3 -->
@@ -1417,8 +1418,7 @@ starting.upto(ending) do |year|
   divisible_by_4 = (year % 4) == 0
   not_divisible_by_100 = (year % 100) != 0
   divisible_by_400 = (year % 400) == 0
-  is_leap_year = (divisible_by_4 && not_divisible_by_100)
-                   || divisible_by_400
+  is_leap_year = (divisible_by_4 && not_divisible_by_100) || divisible_by_400
   if is_leap_year
     puts "#{year}"
   end
@@ -1432,7 +1432,7 @@ end
             <li class="fragment">Conditions - if, elsif, else</li>
             <li class="fragment">Loops - while, for</li>
             <li class="fragment">Arrays - [1,2,3] or %w(one two three)</li>
-            <li class="fragment">Hashes - {"one" => 1, "two" => 2}</li>
+            <li class="fragment">Hashes - {"food" => "veggies", "pet" => "chicken"}</li>
           </ul>
         </section>
 
@@ -1544,7 +1544,7 @@ subtract(5, 2)
           </code></pre>
         </section>
 
-        <section>
+        <!-- <section>
           <h3>Splat Arguments</h3>
           <pre><code contenteditable class="fragment ruby">
 def greet(greeting, *names)
@@ -1558,17 +1558,17 @@ Hello, Alice!
 Hello, Bob!
 Hello, Charlie!
           </code></pre>
-        </section>
+        </section> -->
 
         <section>
           <h3>Default Values</h3>
           <pre><code contenteditable class="fragment ruby">
-def eat(food = "chicken")
+def eat(food = "pizza")
   puts "Yum, #{food}!"
 end
 
 >> eat
-Yum, chicken!
+Yum, pizza!
 
 >> eat "bananas"
 Yum, bananas!
@@ -1601,15 +1601,15 @@ add_to_x_and_y 2, y: 2, x: 1
           <h3>Named Parameters</h3>
           <p>To pass variable parameters, or to pass named parameters, you can use an options hash</p>
           <pre><code contenteditable class="fragment ruby">
-bake("Wheat")
-bake("Sourdough", :flour => "sour")
-bake("Pumpernickel", :creamer => "butter")
-
 def bake(name, options = {})
   flour = options[:flour] || "rye"
   creamer = options[:creamer] || "cream"
-  puts "baking a nice #{flour} loaf with #{creamer}"
+  puts "#{name} recipe: baking a nice #{flour} loaf with #{creamer}"
 end
+
+bake("Wheat")
+bake("Sourdough", :flour => "sour")
+bake "Pumpernickel", :creamer => "butter", :flour => "king arthur"
           </code></pre>
         </section>
 
@@ -1619,13 +1619,13 @@ end
           <pre><code contenteditable class="fragment ruby">
 # Let's extract the length of the padded string into
 # a local variable
-def message(our_string)
+def message(a_string)
   length = 80
-  puts our_string.center(length, "-")
+  puts a_string.center(length, "-")
 end
 
-def different_message(some_string)
-  puts our_string.center(length, "=")
+def different_message(other_string)
+  puts other_string.center(length, "=")
 end
           </code></pre>
         </section>
@@ -1667,6 +1667,14 @@ array = Array.new
         <section>
           <h3>Object Methods</h3>
           <p>Methods can be defined on objects.</p>
+          <pre><code contenteditable class="fragment ruby">
+array = Object.new
+
+def array.party
+  puts "this array is at a party"
+end
+          </code></pre>
+					<p>Already defined methods can be overwritten (not a best practice).</p>
           <pre><code contenteditable class="fragment ruby">
 array = Object.new
 
@@ -1754,7 +1762,7 @@ my_string.upcase
           <li>Within OOP, this relates to different objects being able to respond to the same message in different ways.</li>
             </ul>
           <pre><code contenteditable class="fragment ruby">
-[1, "abc"].each {|object| puts object.next}
+[1, "b"].each {|object| puts object.next}
           </code></pre>
         </section>
 
@@ -1763,15 +1771,15 @@ my_string.upcase
         </section>
 
         <section>
-          <h3>Homework</h3>
-          <p><strong>Practice:</strong> Do some of the exercises at the end of <a href="http://pine.fm/LearnToProgram/?Chapter=08" alt="Chp 8 of Learn to Program">Chapter 8</a> of Learn to Program.</p>
-          <p><strong>Prep:</strong> Read <a href="http://pine.fm/LearnToProgram/?Chapter=09" alt="Chp 9 of Learn to Program">Chapter 9</a> of Learn To Program- don't try to do the exercises at the end yet, though.</p>
+          <h3>Break</h3>
+          <!-- <p><strong>Practice:</strong> Do some of the exercises at the end of <a href="http://pine.fm/LearnToProgram/?Chapter=08" alt="Chp 8 of Learn to Program">Chapter 8</a> of Learn to Program.</p>
+          <p><strong>Prep:</strong> Read <a href="http://pine.fm/LearnToProgram/?Chapter=09" alt="Chp 9 of Learn to Program">Chapter 9</a> of Learn To Program.</p> -->
         </section>
 
 				<!-- class #4 -->
-				<section>
-          <h3>HW: English Numbers</h3>
-          <p>You could expand the EnglishNumbers program by adding the following code to deal with thousands:</p>
+				<!-- <section>
+          <h3>Lab: English Numbers</h3>
+          <p>Try to write a program that asks a user for a year in number format ('YYYY') and returns that year in word format</p>
           <pre><code class="ruby">
 left  = number  # this line was original code, setting the 'left' variable
 
@@ -1816,7 +1824,54 @@ around, #{englishNumber(num_bottles - 1)} bottles of beer on the wall!"
 num_bottles = num_bottles - 1
 end
           </code></pre>
-        </section>
+        </section> -->
+				<section>
+					<h3>Lab</h3>
+					<p>Create a program that asks a user for items with multiple inputs with a conditionalized exit</p>
+					<p><span class="green">Example:</span> Add cars to a garage and list their year, make, and color; the user can only leave the garage when they say "vroom vroom"</p>
+					<p><span class="green">Example:</span> Ask a table of users for their dinner order of an entree, drink, and dessert; only leave the table when the user says "please put in our order"</p>
+				</section>
+
+				<section>
+					<h3>Lab</h3>
+					<p>Here's an example of the garage program</p>
+					<pre><code>
+garage_is_open = true
+@cars_in_garage = []
+
+def addCar(newCar = {})
+  @cars_in_garage << newCar
+end
+
+while garage_is_open
+  puts "Would you like to add a car to the garage?"
+  response = gets.chomp!
+  if response.downcase == "yes"
+    puts "Tell me the year of car"
+    year = gets.chomp!
+    puts "Tell me the model of car"
+    model = gets.chomp!
+    puts "Tell me the color of car"
+    color = gets.chomp!
+
+    addCar({
+      :model => model,
+      :year => year,
+      :color => color
+    })
+  elsif response.downcase == "vroom vroom"
+    puts "ok, we'll close the garage"
+    garage_is_open = false
+  else
+    puts "I'm not sure what you're doing at the garage, then..."
+  end
+  puts "these are the cars in the garage:"
+    @cars_in_garage.each {|car| puts "#{car[:year]}: #{car[:color]} #{car[:model]}"}
+end
+puts "Thanks for visiting the garage"
+
+					</code></pre>
+				</section>
 
         <section>
           <h3>Review</h3>
@@ -1862,10 +1917,10 @@ b.methods
           <p>You can write new methods for the built in classes of Ruby. They will then be available to all instances of that class in your program.</p>
           <pre><code contenteditable class="fragment ruby">
 class String
-def get_excited
-wow = self + "!!!"
-return wow
-end
+	def get_excited
+		wow = self + "!!!"
+		return wow
+	end
 end
           </code></pre>
           <p>"self" refers to the object calling the method.</p>
@@ -1881,12 +1936,12 @@ end
 class Die
 
 def roll
-@numberShowing = 1 + rand(6)
-#rand(6) returns a random-ish number between 0-5
+	@numberShowing = 1 + rand(6)
+	#rand(6) returns a random-ish number between 0-5
 end
 
 def showing
-return @numberShowing
+	return @numberShowing
 end
 
 end
@@ -1913,19 +1968,17 @@ puts die.showing
           <pre><code class="fragment ruby">
 # die.rb
 class Die
+	def initialize
+		roll
+	end
 
-def initialize
-roll
-end
+	def roll
+		@numberShowing = 1 + rand(6)
+	end
 
-def roll
-@numberShowing = 1 + rand(6)
-end
-
-def showing
-@numberShowing
-end
-
+	def showing
+		@numberShowing
+	end
 end
           </code></pre>
         </section>
@@ -1946,25 +1999,25 @@ end
 # in character.rb
 class Character
 
-def initialize(name)
-@name = name
-@health = 10
-end
+  def initialize(name)
+    @name = name
+    @health = 10
+  end
 
-def heal
-@health += 6
-end
+  def heal
+    @health += 6
+  end
 
-def adventure
-if @health > 0
-puts "#{@name} goes on a great adventure and meets a dragon!"
-puts "The dragon hugged #{@name} kind of hard..."
-@health -= 5
-else
-puts "#{@name} is dead :("
-exit
-end
-end
+  def adventure
+    if @health > 0
+      puts "#{@name} goes on a great adventure and meets a dragon!"
+      puts "The dragon hugged #{@name} kind of hard..."
+      @health -= 5
+    else
+      puts "#{@name} is dead :("
+      exit
+    end
+  end
 
 end
           </code></pre>
@@ -1997,9 +2050,9 @@ me.adventure
           <pre><code class="fragment ruby">
 # in character.rb, after Character class code
 class Elf < Character
-def twinkle
-puts "I'm super magical!"
-end
+  def twinkle
+    puts "I'm super magical!"
+  end
 end
 
 #in irb
@@ -2018,13 +2071,13 @@ me.twinkle
           <pre><code contenteditable class="fragment ruby">
 # in character.rb, after Character class code
 class Elf < Character
-def twinkle
-puts "I'm super magical!"
-end
+  def twinkle
+    puts "I'm super magical!"
+  end
 
-def heal
-@health += 8 # it's easier to heal when you're magic
-end
+  def heal
+    @health += 8 # it's easier to heal when you're magic
+  end
 end
 
 #in irb
@@ -2138,7 +2191,7 @@ ruby adventure.rb
         </section>
 
         <section>
-          <h3>Homework</h3>
+          <h3>Break</h3>
           <p><strong>Practice:</strong>  Make your final project even bigger and better! If you're taking this class as part of a job plan, attend a local meetup and talk to a couple of strangers about what you've learned and what you're excited about doing with programming. </p>
         </section>
 
